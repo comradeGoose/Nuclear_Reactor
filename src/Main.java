@@ -39,9 +39,9 @@ public class Main {
             public void run() {
                 while (reactor.value < 100 && reactor.value > 0){
                     reactor.inputValue();
-                    System.out.println("threadInput: value = " + reactor.value);
+                    System.out.println("threadInput: value = " + reactor.input);
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(500);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

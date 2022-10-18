@@ -2,24 +2,30 @@ import java.util.Scanner;
 
 public class Nuclear_Reactor {
     int value;
+    int input;
 
-    Nuclear_Reactor(){
+    Nuclear_Reactor() {
         this.value = 50;
+        this.input = 50;
     }
 
-    public synchronized int inc(){
-        this.value++;
+    public synchronized int inc() {
+        if (input >= value) {
+            this.value++;
+        }
         return this.value;
     }
 
-    public synchronized int dec(){
-        this.value--;
+    public synchronized int dec() {
+        if (input <= value) {
+            this.value--;
+        }
         return this.value;
     }
 
-    public void inputValue(){
+    public void inputValue() {
         Scanner scanner = new Scanner(System.in);
-        this.value = scanner.nextInt();
+        this.input = scanner.nextInt();
     }
 
 }
